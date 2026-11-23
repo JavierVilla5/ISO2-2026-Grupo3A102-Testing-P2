@@ -134,3 +134,17 @@ program without use cases or iterations.
 - **Reason:** It is the same rule as in the main repository, it keeps the repository readable for every pair, and it avoids mixed languages in the same file.
 - **Consequences:** Rule 21 of AGENTS.md. The PDF of Step 2 is the work of Pair 3, and its language is their choice.
 - **Status:** Decided by Javier on 22/11/2026; pending the approval of Adam in the review of the pull request that adds this file.
+
+## D-011 · Issues in progress, and one agent per task at a time
+**Date:** 23/11/2026 · **Step:** 1 · **Minutes:** —
+
+- **Context:** The professor asked in the lab session of 17/11/2026 to move the issues to *In progress* when we start them, and the main repository did it in D-041. Rule 15 of AGENTS.md already forbids two agents on the same branch or folder, but nothing shows who is working on each task.
+- **Decision:**
+  - Before starting a task, the member assigns its issue to themself and moves it to *In progress* on the project board. It stays there until the pull request that closes it is merged, and then it goes to *Done*.
+  - An issue that is *In progress* belongs to its assignee: nobody else, and no other agent, works on it.
+  - In step 1 of the cycle, the agent checks that the issue is assigned to the member who asked for the work and is not being worked on by someone else. If it is not, it stops and tells the member. It also reminds the member to move the issue to *In progress*.
+  - When an issue is done, a line is added to the wiki page *Traceability* with the date, who and the link.
+- **Alternatives:** Telling each other in WhatsApp who is working on what, which is not recorded.
+- **Reason:** The board shows at any moment who is working on each task, and an agent cannot start on work that is someone else's.
+- **Consequences:** Extends rule 15 of AGENTS.md and D-006. Step 1 of the cycle in AGENTS.md is updated in the same pull request.
+- **Status:** Proposed by Javier on 23/11/2026; pending the approval of Adam in the review of the pull request that adds it.
