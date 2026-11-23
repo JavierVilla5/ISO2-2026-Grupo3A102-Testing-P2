@@ -32,6 +32,18 @@ mvn verify
 > Until Step 3 the coverage check only shows a warning (`haltOnFailure` is `false` in `pom.xml`), because the program
 > is written before its tests. Pair 1 sets `haltOnFailure` to `true` in Step 3 (D-004).
 
+## Run the program
+
+```
+mvn compile
+java -cp target/classes es.uclm.iso2.scholarships.ui.ScholarshipConsole
+```
+
+The program asks for the GPA, the family income, the distance to the campus, the degree of disability and the number
+of siblings, and shows the scholarship (`EXCELLENCE`, `RESIDENCE`, `LARGE_FAMILY`, `INCLUSION` or `NONE`). Decimal
+numbers are typed with a dot, for example `7.5`. If a value is not a number, or the domain rejects it, the program
+shows the reason and asks again. It handles one student per run.
+
 ## Structure
 
 | Package | Content |
