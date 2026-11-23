@@ -15,7 +15,7 @@ Decided one by one by Javier on 23/11/2026. A Makefile was considered and reject
 - **Q:** What if the domain rejects a value? **A:** The console shows `getMessage()` of the `IllegalArgumentException` as it is and asks again for the five data (Javier, 23/11/2026).
 - **Q:** How many students per run? **A:** One. To try another case, run the program again (Javier, 23/11/2026).
 - **Q:** What is shown as the result? **A:** The category, for example `Scholarship: LARGE_FAMILY` (Q7: only the category) (Javier, 23/11/2026).
-- **Q:** Decimal separator? **A:** The dot (`7.5`), read with `Locale.ROOT` so that it does not depend on the computer (Javier, 23/11/2026).
+- **Q:** Decimal separator? **A:** The dot (`7.5`), parsed with `Double.parseDouble`, which always uses the dot, so that it does not depend on the computer (Javier, 23/11/2026).
 - **Q:** How is the program run, without new plugins (rule 6)? **A:** `mvn compile` and `java -cp target/classes es.uclm.iso2.scholarships.ui.ScholarshipConsole`, written in the README (Javier, 23/11/2026).
 
 ## Files
@@ -30,21 +30,21 @@ No test is written in Step 1 (rule 17 of AGENTS.md). Not in this task: `pom.xml`
 
 ## Steps
 Tick each step with the hash of its commit (green `mvn -B verify`).
-- [ ] 1. This plan
-- [ ] 2. `ScholarshipConsole` (reading and result) and the `package-info.java` of `ui`
-- [ ] 3. README: how to run the program
-- [ ] 4. Tick the steps of this plan with their hashes, and push everything
+- [x] 1. This plan (fda1159)
+- [x] 2. `ScholarshipConsole` (reading and result) and the `package-info.java` of `ui` (1e1aee5)
+- [x] 3. README: how to run the program (686dfa7)
+- [x] 4. Tick the steps of this plan with their hashes, and push everything
 - [ ] 5. Open the pull request to `develop` with `Closes #4`, only when everything is pushed and Javier asks (rule 22 proposed in #24); check that the CI is green
 
 ## Verification
-- [ ] Every point of the issue #4 is checked.
-- [ ] Every public class and method has its Javadoc (rule 18).
-- [ ] The console has no business rules: it only creates the `Student`, calls the domain and prints (D-008).
-- [ ] `mvn -B verify` is green, and the program has been tried by hand with a valid case and an invalid one.
+- [x] Every point of the issue #4 is checked.
+- [x] Every public class and method has its Javadoc (rule 18).
+- [x] The console has no business rules: it only creates the `Student`, calls the domain and prints (D-008).
+- [x] `mvn -B verify` is green, and the program has been tried by hand with a valid case and an invalid one.
 - [ ] The CI is green on the pull request.
 
 ## Status
 - **In progress:** nothing
-- **Next step:** step 2, `ScholarshipConsole` and the `package-info.java` of `ui`
+- **Next step:** step 5, the pull request to `develop` with `Closes #4`, only when Javier asks; then move #4 to *Done* and add a line to *Traceability*
 - **Open questions:** none
 - **Last update:** 23/11/2026, Javier's agent
