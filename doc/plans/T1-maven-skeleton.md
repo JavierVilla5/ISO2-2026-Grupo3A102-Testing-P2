@@ -31,7 +31,7 @@ Not in this task: any class of the domain or the console (T2, T3), any test (rul
 ## Steps
 Tick each step with the hash of its commit (green `mvn -B verify`).
 - [x] 1. `pom.xml`, `.gitignore` and the two `package-info.java`; `mvn -B verify` is green (ca9df8e)
-- [ ] 2. `.github/workflows/maven.yml`
+- [x] 2. `.github/workflows/maven.yml` (0c87fed)
 - [ ] 3. Open the pull request to `develop` with `Closes #2` (only when Javier asks); check that the CI is green
 
 ## Verification
@@ -41,7 +41,7 @@ Tick each step with the hash of its commit (green `mvn -B verify`).
 - [ ] The CI is green on the pull request.
 
 ## Status
-- **In progress:** step 2
-- **Next step:** step 2, the CI workflow
+- **In progress:** nothing
+- **Next step:** step 3, the pull request when Javier asks
 - **Open questions:** none
 - **Last update:** 23/11/2026, Javier
