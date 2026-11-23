@@ -99,6 +99,10 @@ A question that does not change any file does not need a plan.
     Javadoc, messages that the console shows, test names, commits, pull requests, issues, plans, README, wiki and
     documents. Talk to the member in the language the member uses, but never write anything else than English in the
     repository.
+22. **Open the pull request last.** Do not open a pull request until everything of the task is committed and pushed:
+    the code, the documents that the issue asks for, and the plan with every step ticked and its Status up to date
+    (cycle step 8). Check that `git status` is clean and that `git log origin/<branch>..HEAD` shows nothing. Once the
+    pull request is open, push nothing more to its branch except what a reviewer asks for in it.
 
 If two sources disagree, DECISIONS.md wins, then table Q of the README, then the issues. Do not choose on your own: tell
 the member.
