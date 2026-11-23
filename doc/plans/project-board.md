@@ -24,17 +24,17 @@ Not part of this task: the Project, its access and its board view are already do
 
 ## Steps
 Tick each step with the hash of its commit. There is no `pom.xml` on `develop` yet (task T1), so `mvn -B verify` cannot run in this task; the check is reading the diff.
-- [ ] 1. Add D-011 to `DECISIONS.md`, and this plan
-- [ ] 2. Change step 1 of the cycle in `AGENTS.md`
+- [x] 1. Add D-011 to `DECISIONS.md`, and this plan (babe90c)
+- [x] 2. Change step 1 of the cycle in `AGENTS.md` (f78e2f2)
 
 ## Verification
-- [ ] Every point of the issue #18 is checked.
-- [ ] The text of D-011 is the one Javier approved.
-- [ ] The diff only touches the three files above.
+- [x] Every point of the issue #18 is checked (the D-011 box is ticked when the pull request is merged).
+- [x] The text of D-011 is the one Javier approved.
+- [x] The diff only touches the three files above.
 - [ ] `mvn -B verify`: not applicable until T1 is merged.
 
 ## Status
-- **In progress:** step 1
-- **Next step:** step 2, the line in `AGENTS.md`
+- **In progress:** nothing
+- **Next step:** open the pull request (Closes #18) when Javier asks
 - **Open questions:** none
 - **Last update:** 23/11/2026, Javier
