@@ -26,7 +26,7 @@ Every task that changes files follows this cycle. Do not skip steps, and do not 
 1. **Read.** Run `git fetch origin` and `git pull` on your branch. Read your task issue, this file, the decisions
    table Q of the [README](README.md) and the plan of the task in `doc/plans/`, if it exists. Check that the issue is
    assigned to the member who asked for the work. If it is assigned to someone else, or another agent is working on
-   it, stop and tell the member.
+   it, stop and tell the member (D-011). Remind the member to move it to *In progress* on the project board.
 2. **Ask.** Write every doubt, ambiguity or missing piece in one message and wait for the answers. Never fill a gap
    with an assumption: an open question about the statement becomes a new row of table Q, decided by Pair 2.
 3. **Plan.** Write or update `doc/plans/<task>.md` from [doc/plans/TEMPLATE.md](doc/plans/TEMPLATE.md): the questions
