@@ -33,17 +33,17 @@ Not in this task: `DECISIONS.md`, any other rule, the program and the CI. No tes
 
 ## Steps
 Tick each step with the hash of its commit.
-- [ ] 1. This plan
-- [ ] 2. Rule 22 in `AGENTS.md`, and the plan ticked with the hashes; push everything
+- [x] 1. This plan (743672c)
+- [x] 2. Rule 22 in `AGENTS.md` (b4581c1), and the plan ticked with the hashes; push everything
 - [ ] 3. Open the pull request to `develop` with `Closes #24`, only when everything is pushed and Javier asks; check that the CI is green
 
 ## Verification
-- [ ] The text of rule 22 is the approved one, after rule 21, and nothing else of `AGENTS.md` changed (`git diff` shows only added lines).
-- [ ] `mvn -B verify` is green (the CI also runs it).
+- [x] The text of rule 22 is the approved one, after rule 21, and nothing else of `AGENTS.md` changed (`git diff` shows only added lines).
+- [x] `mvn -B verify` is green (the CI also runs it).
 - [ ] The CI is green on the pull request.
 
 ## Status
 - **In progress:** nothing
-- **Next step:** step 2, rule 22 in `AGENTS.md`
+- **Next step:** push everything and, when Javier asks, step 3, the pull request with `Closes #24`
 - **Open questions:** none
 - **Last update:** 23/11/2026, Javier's agent
