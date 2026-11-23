@@ -34,11 +34,11 @@ No test is written in Step 1 (rule 17 of AGENTS.md). Not in this task: the conso
 
 ## Steps
 Tick each step with the hash of its commit (green `mvn -B verify`). Steps 1 to 4 are committed one after the other from the same set of files; each of them was built on its own with a green `mvn -B verify` before it was committed.
-- [ ] 1. This plan and `Scholarship`
-- [ ] 2. `Student` with its validations
-- [ ] 3. `ScholarshipSelector` with the rules
-- [ ] 4. README: "Methods to test" and Q8, and the `package-info.java` of the domain
-- [ ] 5. Tick the steps of this plan with their hashes
+- [x] 1. This plan and `Scholarship` (b24417a)
+- [x] 2. `Student` with its validations (6071d39)
+- [x] 3. `ScholarshipSelector` with the rules (2d8b0ff)
+- [x] 4. README: "Methods to test" and Q8, and the `package-info.java` of the domain (54c5628)
+- [x] 5. Tick the steps of this plan with their hashes
 - [ ] 6. Open the pull request to `develop` with `Closes #3` (only when Adam asks); check that the CI is green
 
 ## Verification
@@ -50,6 +50,6 @@ Tick each step with the hash of its commit (green `mvn -B verify`). Steps 1 to 4
 
 ## Status
 - **In progress:** nothing
-- **Next step:** step 5, tick steps 1 to 4 with the hashes of their commits; then step 6, the pull request when Adam asks, and tell Javier the signatures of `Student` and `ScholarshipSelector` for T3 (#4)
+- **Next step:** step 6, the pull request when Adam asks; tell Javier the signatures of `Student` and `ScholarshipSelector` for T3 (#4) and ask him to review Q8
 - **Open questions:** none
 - **Last update:** 23/11/2026, Adam
