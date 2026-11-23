@@ -15,7 +15,7 @@
 - **Q:** `Student` as a class or a record? **A:** A `final` class with private `final` fields, a constructor that validates and one getter per field (data encapsulated, ET.02.00 and D-003; Adam, 23/11/2026).
 - **Q:** Order of the parameters of the constructor? **A:** The order of the statement and of the README: GPA, family income, distance, disability degree, siblings (Adam, 23/11/2026).
 - **Q:** Messages of the exceptions (Q5 only says English and the name of the field)? **A:** `GPA must be between 0 and 10`, `Family income must be 0 or more`, `Distance must be 0 or more`, `Disability degree must be between 0 and 100`, `Number of siblings must be 0 or more`. With several invalid data, the first one in that order is reported (Adam, 23/11/2026).
-- **Q:** What does `select` do with a `null` student? The statement and table Q do not say. **A:** A new row Q8 of the README: `IllegalArgumentException` with the message `Student must not be null`, the same exception as Q5 for any invalid input. Pair 2 reviews it in the pull request (Adam, 23/11/2026).
+- **Q:** What does `select` do with a `null` student? The statement and table Q do not say. **A:** Accepted by Javier with the merge of #21 (proposed by Adam) as a new row Q8 of the README: `IllegalArgumentException` with the message `Student must not be null`, the same exception as Q5 for any invalid input. It is a proposal of Adam (23/11/2026): Javier accepts it or asks to remove it in the review of the pull request (rule 1, table Q is decided by Pair 2).
 - **Q:** Where are the limits? **A:** The limits of the valid ranges are `public static final` constants of `Student`, and the limits of the rules are `public static final` constants of `ScholarshipSelector`, one per rule even when two rules share the value (5.0), so that each boundary is traced to its rule (Adam, 23/11/2026).
 - **Q:** One `if` per rule with `&&`, or nested `if` statements? **A:** One `if` per rule with `&&`, in the order of Q1, and `return NONE` at the end (D-003: simple `if` statements; each rule is one compound decision for the MC/DC of Pair 3; Adam, 23/11/2026).
 - **Q:** May the sentence "It is filled in by task T2" of the `package-info.java` of the domain be replaced by the list of the classes? **A:** Yes (Adam, 23/11/2026).
@@ -39,17 +39,19 @@ Tick each step with the hash of its commit (green `mvn -B verify`). Steps 1 to 4
 - [x] 3. `ScholarshipSelector` with the rules (2d8b0ff)
 - [x] 4. README: "Methods to test" and Q8, and the `package-info.java` of the domain (54c5628)
 - [x] 5. Tick the steps of this plan with their hashes
-- [ ] 6. Open the pull request to `develop` with `Closes #3` (only when Adam asks); check that the CI is green
+- [x] 6. Open the pull request to `develop` with `Closes #3`; check that the CI is green (pull request #21, CI green on dcdd60d)
+- [x] 7. Javier reviews the pull request, accepts Q8 and merges it (pull request #21, merge commit 8ae4e24)
+- [ ] 8. The status of this plan reaches `develop`: commit f64a9bb was pushed after the merge of #21, so #3 is reopened and this plan goes in a second pull request
 
 ## Verification
 - [x] Every point of the issue #3 is checked: `Student` (Q5, Q6), `Scholarship` (Q4, Q7), one public method with simple `if` statements in the order of Q1 and the limits of Q2 and Q3, named constants, Javadoc, no console, and the table "Methods to test" of the README.
 - [x] Every public class, method and constant has its Javadoc (rule 18); `mvn javadoc:javadoc` with `doclint=all` shows no warning.
 - [x] The domain has no console input or output (D-003).
 - [x] `mvn -B verify` is green after each step; there are no tests yet, so JaCoCo has nothing to check (D-004).
-- [ ] The CI is green on the pull request.
+- [x] The CI is green on the pull request (#21).
 
 ## Status
 - **In progress:** nothing
-- **Next step:** step 6, the pull request when Adam asks; tell Javier the signatures of `Student` and `ScholarshipSelector` for T3 (#4) and ask him to review Q8
+- **Next step:** step 8, the second pull request of `feature/domain` with `Closes #3`. After its merge: move #3 to *Done* and add a line to the wiki page *Traceability*. Javier already has the signatures of `Student` and `ScholarshipSelector` for T3 (#4)
 - **Open questions:** none
-- **Last update:** 23/11/2026, Adam
+- **Last update:** 23/11/2026, Adam (after the merge of #21)
