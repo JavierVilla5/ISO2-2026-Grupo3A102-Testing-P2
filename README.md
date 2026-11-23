@@ -36,7 +36,7 @@ mvn verify
 
 | Package | Content |
 |---|---|
-| `es.uclm.iso2.scholarships.domain` | `Student` (input data and validations), `Scholarship` (the result) and the rules that choose it |
+| `es.uclm.iso2.scholarships.domain` | `Student` (input data and validations), `Scholarship` (the result) and `ScholarshipSelector` (the rules that choose it) |
 | `es.uclm.iso2.scholarships.ui` | Command-line interface, with no business rules |
 | `src/test/java` | JUnit tests (Step 3, Pair 1) |
 
@@ -81,6 +81,7 @@ program (D-007).
 | Q5 | Which data are valid, and what happens with the invalid ones? | The ranges of the table above. Otherwise the constructor of `Student` throws an `IllegalArgumentException` with a message in English that names the field. | A GPA is out of 10 and a disability degree is a percentage; the statement gives no other range and we do not invent one. The standard exception needs no new class and is tested with `assertThrows`. |
 | Q6 | Which Java types? | `double` for GPA, income and distance; `int` for disability and siblings. | Disability degree and siblings are whole numbers. The income is only compared with limits, so `BigDecimal` would add complexity for nothing. |
 | Q7 | What does the program return? | The enum `Scholarship` with five values: `EXCELLENCE`, `RESIDENCE`, `LARGE_FAMILY`, `INCLUSION` and `NONE`. Only the category, not the amounts. | The statement asks to determine the category. Every test compares with one value, and there are no amounts to calculate or texts to compare. |
+| Q8 | What happens if the method that chooses the scholarship receives no student (`null`)? | It throws an `IllegalArgumentException` with the message `Student must not be null`. | The statement does not say it. It is invalid input, so it gets the same exception as the invalid data of Q5, and the tests check it with `assertThrows`. |
 
 ## For Pair 3 – test design (Step 2)
 
@@ -89,12 +90,16 @@ You design the tests from this README and the code of `develop`, and deliver `IS
 - **Inputs and outputs:** the five input data of the table "Valid input data" and the six results (five values of `Scholarship`, plus the exception for invalid data).
 - **Decision table:** the table "The rules of the statement", read from top to bottom. The code follows the same order with simple `if` statements.
 - **Limits:** every limit is a named constant in the code, so you take the boundary values from them: GPA 5.0, 6.5 and 8.5; income 15,000, 20,000 and 30,000; distance 50; disability degree 33; siblings 3; and the ends of the valid ranges (GPA 0 and 10, disability 0 and 100).
-- **Methods to test:** the table below is completed when task T2 is done.
+- **Methods to test:**
+
+All of them are in the package `es.uclm.iso2.scholarships.domain`, and their Javadoc gives the details.
 
 | Class | Method | What it does | Throws |
 |---|---|---|---|
-| `Student` | constructor | *to be completed in T2* | *to be completed in T2* |
-| *to be completed in T2* | *to be completed in T2* | *to be completed in T2* | – |
+| `Student` | `Student(double gpa, double familyIncome, double distance, int disabilityDegree, int siblings)` | Creates the student after checking the five data in this order (Q5, Q6). The limits are the constants `MIN_GPA`, `MAX_GPA`, `MIN_FAMILY_INCOME`, `MIN_DISTANCE`, `MIN_DISABILITY_DEGREE`, `MAX_DISABILITY_DEGREE` and `MIN_SIBLINGS` | `IllegalArgumentException` for the first invalid value (`NaN` and infinite included), with one of these messages: `GPA must be between 0 and 10`, `Family income must be 0 or more`, `Distance must be 0 or more`, `Disability degree must be between 0 and 100`, `Number of siblings must be 0 or more` |
+| `Student` | `getGpa()`, `getFamilyIncome()`, `getDistance()`, `getDisabilityDegree()`, `getSiblings()` | Return the data | – |
+| `ScholarshipSelector` | `Scholarship select(Student student)` | Returns the first scholarship whose rule is met, in the order of Q1, or `NONE` (Q4). One `if` per rule, with the limits of Q2 and Q3 as the constants `EXCELLENCE_MIN_GPA`, `EXCELLENCE_INCOME_LIMIT`, `RESIDENCE_MIN_GPA`, `RESIDENCE_GPA_LIMIT`, `RESIDENCE_INCOME_LIMIT`, `RESIDENCE_DISTANCE_LIMIT`, `LARGE_FAMILY_MIN_GPA`, `LARGE_FAMILY_INCOME_LIMIT`, `LARGE_FAMILY_MIN_SIBLINGS`, `INCLUSION_MIN_DISABILITY_DEGREE` and `INCLUSION_MIN_GPA` | `IllegalArgumentException` with the message `Student must not be null` (Q8) |
+| `Scholarship` | – | Enum with the result: `EXCELLENCE`, `RESIDENCE`, `LARGE_FAMILY`, `INCLUSION`, `NONE` (Q7) | – |
 
 ## For Pair 1 – JUnit tests (Step 3)
 
