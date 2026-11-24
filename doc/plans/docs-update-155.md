@@ -42,8 +42,8 @@ Not in this task: the program (frozen, D-007), the review of SOLID (#23), `pom.x
 
 ## Steps
 Tick each step with the hash of its commit.
-- [ ] 1. This plan
-- [ ] 2. D-012 in `DECISIONS.md` and rule 5 of `AGENTS.md`
+- [x] 1. This plan (c6ca3c1)
+- [x] 2. D-012 in `DECISIONS.md` and rule 5 of `AGENTS.md` (150575e)
 - [ ] 3. D-013 in `DECISIONS.md` and rule 23 of `AGENTS.md`
 - [ ] 4. Wiki *Time tracking* (only when Javier asks) and a line in the wiki *Traceability*
 - [ ] 5. Open the pull request to `develop` with `Closes #27`, only when everything is pushed and Javier asks (rule 22)
@@ -55,6 +55,6 @@ Tick each step with the hash of its commit.
 
 ## Status
 - **In progress:** nothing
-- **Next step:** step 2, D-012 in `DECISIONS.md` and rule 5 of `AGENTS.md`
+- **Next step:** step 4, the wiki *Time tracking*, only when Javier asks
 - **Open questions:** when to create the wiki page
 - **Last update:** 24/11/2026, Javier's agent

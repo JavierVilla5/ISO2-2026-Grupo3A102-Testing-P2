@@ -104,6 +104,9 @@ A question that does not change any file does not need a plan.
     the code, the documents that the issue asks for, and the plan with every step ticked and its Status up to date
     (cycle step 8). Check that `git status` is clean and that `git log origin/<branch>..HEAD` shows nothing. Once the
     pull request is open, push nothing more to its branch except what a reviewer asks for in it.
+23. **Remind the member about the main repository** (D-013). When a task issue of this repository is closed, remind
+    the member to tick the matching checkbox of the step issue of the main repository (#159, #160 or #161) and, if it
+    was the last task of the step, to close that issue too. Never do it yourself (rule 8).
 
 If two sources disagree, DECISIONS.md wins, then table Q of the README, then the issues. Do not choose on your own: tell
 the member.
