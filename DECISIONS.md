@@ -148,3 +148,13 @@ program without use cases or iterations.
 - **Reason:** The board shows at any moment who is working on each task, and an agent cannot start on work that is someone else's.
 - **Consequences:** Extends rule 15 of AGENTS.md and D-006. Step 1 of the cycle in AGENTS.md is updated in the same pull request.
 - **Status:** Proposed by Javier on 23/11/2026; pending the approval of Adam in the review of the pull request that adds it.
+
+## D-012 · Follow the SOLID principles to make the program easy to test
+**Date:** 24/11/2026 · **Step:** 1 · **Issue:** #27 · **Minutes:** —
+
+- **Context:** The statement (ET.02.00, practical session 0) encourages writing code that is easy to test by following the SOLID principles, and Pair 1 added the same decision to the repository of Problem 1 (D-012 there). Step 1 has no assessment of its own, but the quality of its code decides the effort of Steps 2 and 3.
+- **Decision:** The program follows the SOLID principles pragmatically, without overengineering: the data and their validation (`Student`), the rules that choose the scholarship (`ScholarshipSelector`) and the console (package `ui`) are separate classes, each with one responsibility; the limits of the rules are named constants; the domain does not depend on the console, and the console depends on the domain; public classes and methods have small, focused signatures.
+- **Alternatives:** Ignoring SOLID. Adding layers, interfaces or frameworks that the program does not need and that make the test design of Step 2 harder.
+- **Reason:** Small cohesive classes with simple decisions make the test units obvious for Pair 3 and easy to cover for Pair 1, and the statement asks for it.
+- **Consequences:** Extends D-003 and D-008, and rule 5 of AGENTS.md references it. The program is frozen (D-007), so checking whether the delivered code follows SOLID is issue #23, and any change it needs goes through D-007.
+- **Status:** Proposed by Javier on 24/11/2026; pending the approval of Adam in the review of the pull request that adds it.
