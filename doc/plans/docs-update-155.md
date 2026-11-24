@@ -46,7 +46,7 @@ Tick each step with the hash of its commit.
 - [x] 2. D-012 in `DECISIONS.md` and rule 5 of `AGENTS.md` (150575e)
 - [x] 3. D-013 in `DECISIONS.md` and rule 23 of `AGENTS.md` (4e5d221)
 - [x] 4a. Wiki *Time tracking*, empty, with links in `Home` and `_Sidebar` (wiki commit 9c07e3e, Javier chose option A on 24/11/2026)
-- [ ] 4b. A line in the wiki *Traceability* (only when Javier asks)
+- [x] 4b. Wiki *Traceability* up to date: T3, rule 22 and this task (wiki commit 83bf522)
 - [ ] 5. Open the pull request to `develop` with `Closes #27`, only when everything is pushed and Javier asks (rule 22)
 
 ## Verification
@@ -56,6 +56,6 @@ Tick each step with the hash of its commit.
 
 ## Status
 - **In progress:** nothing
-- **Next step:** step 4b, the line in *Traceability*, only when Javier asks; then step 5, the pull request
+- **Next step:** push the branch, then step 5, the pull request, only when Javier asks
 - **Open questions:** when to create the wiki page
 - **Last update:** 24/11/2026, Javier's agent
