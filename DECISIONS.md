@@ -148,3 +148,23 @@ program without use cases or iterations.
 - **Reason:** The board shows at any moment who is working on each task, and an agent cannot start on work that is someone else's.
 - **Consequences:** Extends rule 15 of AGENTS.md and D-006. Step 1 of the cycle in AGENTS.md is updated in the same pull request.
 - **Status:** Proposed by Javier on 23/11/2026; pending the approval of Adam in the review of the pull request that adds it.
+
+## D-012 · Follow the SOLID principles to make the program easy to test
+**Date:** 24/11/2026 · **Step:** 1 · **Issue:** #27 · **Minutes:** —
+
+- **Context:** The statement (ET.02.00, practical session 0) encourages writing code that is easy to test by following the SOLID principles, and Pair 1 added the same decision to the repository of Problem 1 (D-012 there). Step 1 has no assessment of its own, but the quality of its code decides the effort of Steps 2 and 3.
+- **Decision:** The program follows the SOLID principles pragmatically, without overengineering: the data and their validation (`Student`), the rules that choose the scholarship (`ScholarshipSelector`) and the console (package `ui`) are separate classes, each with one responsibility; the limits of the rules are named constants; the domain does not depend on the console, and the console depends on the domain; public classes and methods have small, focused signatures.
+- **Alternatives:** Ignoring SOLID. Adding layers, interfaces or frameworks that the program does not need and that make the test design of Step 2 harder.
+- **Reason:** Small cohesive classes with simple decisions make the test units obvious for Pair 3 and easy to cover for Pair 1, and the statement asks for it.
+- **Consequences:** Extends D-003 and D-008, and rule 5 of AGENTS.md references it. The program is frozen (D-007), so checking whether the delivered code follows SOLID is issue #23, and any change it needs goes through D-007.
+- **Status:** Proposed by Javier on 24/11/2026; pending the approval of Adam in the review of the pull request that adds it.
+
+## D-013 · Reminder to update the issue of the main repository
+**Date:** 24/11/2026 · **Step:** 1 · **Issue:** #27 · **Minutes:** —
+
+- **Context:** Each step issue of the main repository (#159, #160 and #161) has a checklist that the tasks of this repository fulfil, and nothing reminds us to update it. A `Closes` keyword in the pull requests would close it with the first one that is merged, before the step is finished.
+- **Decision:** The member updates the issue of the main repository by hand. Every time a task issue of this repository is closed, the agent reminds the member to tick the matching checkbox of the step issue and, if it was the last task of the step, to close that issue too. The agent never changes the main repository (rule 8 of AGENTS.md).
+- **Alternatives:** `Closes igrt08-uclm/2026-ISO2-3A1.02#n` in every pull request. Closing it by hand with no reminder.
+- **Reason:** It keeps the issues of the main repository true, without a script or a keyword that closes them too early, and the reminder stops it from being forgotten.
+- **Consequences:** Rule 23 of AGENTS.md. Extends D-006 and D-011.
+- **Status:** Proposed by Javier on 24/11/2026; pending the approval of Adam in the review of the pull request that adds it.

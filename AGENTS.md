@@ -53,8 +53,9 @@ A question that does not change any file does not need a plan.
 3. **Only ET.02.03.** Do not add scholarships, rules or inputs that the statement does not name.
 4. **The specification is the statement plus table Q of the README.** The code follows them. If they disagree or leave
    a gap, stop and ask (cycle step 2).
-5. **Keep it simple.** The smallest code that meets the specification: no extra features and no overengineering. The
-   simpler the program, the easier it is to test.
+5. **Keep it simple and follow SOLID (D-012).** The smallest cohesive code that meets the specification and applies the
+   SOLID principles: no extra features and no overengineering. The simpler and better decoupled the program, the
+   easier it is to test.
 6. **No new dependencies, frameworks or tools.** Only JUnit, Surefire and JaCoCo, as the statement says.
 7. **Branches.** Work only on the branch of your task: `feature/short-description` in Step 1, and `hotfix/short-description`
    created from `develop` in Step 3. A member creates it on GitHub from the issue: never create, rename or delete a
@@ -103,6 +104,9 @@ A question that does not change any file does not need a plan.
     the code, the documents that the issue asks for, and the plan with every step ticked and its Status up to date
     (cycle step 8). Check that `git status` is clean and that `git log origin/<branch>..HEAD` shows nothing. Once the
     pull request is open, push nothing more to its branch except what a reviewer asks for in it.
+23. **Remind the member about the main repository** (D-013). When a task issue of this repository is closed, remind
+    the member to tick the matching checkbox of the step issue of the main repository (#159, #160 or #161) and, if it
+    was the last task of the step, to close that issue too. Never do it yourself (rule 8).
 
 If two sources disagree, DECISIONS.md wins, then table Q of the README, then the issues. Do not choose on your own: tell
 the member.
